@@ -25,3 +25,21 @@
 
 # drink = Drink.create(order_id: order.id, recipe_id: 1, status: 0)
 # drink = Drink.create(order_id: order.id, recipe_id: 3, status: 0)
+
+# recipe = Recipe.create(name: "Stella Artois", ingredients: "Belgian Pale Ale", price: 8, list: 1)
+# recipe = Recipe.create(name: "Blue Moon", ingredients: "Witbier", price: 7, list: 1)
+# recipe = Recipe.create(name: "Bud Light", ingredients: "Lightlager", price: 6, list: 1)
+# recipe = Recipe.create(name: "Victoria", ingredients: "Vienna Lager", price: 6, list: 1)
+# recipe = Recipe.create(name: "Corona", ingredients: "Pale Lager", price: 6, list: 1)
+# recipe = Recipe.create(name: "Heineken", ingredients: "Pale Lager", price: 6, list: 1)
+# recipe = Recipe.create(name: "Samuel Adams", ingredients: "Pilsner", price: 7, list: 1)
+
+# recipe = Recipe.create(name: "Jack Daniels", ingredients: "Whiskey", price: 300, list: 2)
+# recipe = Recipe.create(name: "Johnie Walker Black", ingredients: "Scotch", price: 350, list: 2)
+# recipe = Recipe.create(name: "Hennesy VS", ingredients: "Cognac", price: 300, list: 2)
+# recipe = Recipe.create(name: "Don Julio 1942", ingredients: "Tequila", price: 750, list: 2)
+# recipe = Recipe.create(name: "Patron", ingredients: "Tequila", price: 300, list: 2)
+# recipe = Recipe.create(name: "Belvedere", ingredients: "Vodka", price: 350, list: 2)
+# recipe = Recipe.create(name: "Moet & Chandon Rose", ingredients: "Champagne", price: 400, list: 2)
+
+

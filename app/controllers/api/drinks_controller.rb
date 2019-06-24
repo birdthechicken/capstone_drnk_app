@@ -1,17 +1,36 @@
 class Api::DrinksController < ApplicationController
+  before_action :authenticate_user
 
   def index
-    @drinks = Drink.all
+    @drinks = current_user.submitted_drinks
     render 'index.json.jbuilder' 
   end 
 
   def create
+    # check if there is an open order for the current user
+      # if an order is open for the current user, add drink to it
+      # if an order does not exist (or is not open), create one
+
+    # @order = current_user.submitted_orders.ordering.last
+
+    # if !@order
+    #   @order = Order.new(
+    #                     bartender_id: Bartender.first.id, #replace later
+    #                     customer_id: current_user.id,
+    #                     status: "ordering"
+    #                     )
+    # end
+
+    @order = Order.find_or_create_by(
+                                      bartender_id: Bartender.first.id, #replace later
+                                      customer_id: current_user.id,
+                                      status: "ordering"
+                                      )
+
     @drink = Drink.new(
-                       order_id: params[:order_id],
+                       order_id: @order.id,
                        recipe_id: params[:recipe_id],
-                       rating: params[:rating],
-                       comment: params[:comment],
-                       status:  0
+                       status: "pending"
       )
 
     if @drink.save

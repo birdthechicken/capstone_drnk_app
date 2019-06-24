@@ -1,7 +1,11 @@
 class Api::RecipesController < ApplicationController
-
+  before_action :authenticate_user
+  
   def index
-    @recipes = Recipe.all
+    @cocktails = Recipe.cocktails
+    @beers = Recipe.beers
+    @hard_liquors = Recipe.hard_liquors
+    
     render 'index.json.jbuilder'
   end
 
