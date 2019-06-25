@@ -22,9 +22,10 @@
 #  user = User.create(first_name: "John", last_name: "Bigsy", email: "ruler@gmail.com", phone_number: "555-5678", password: "actualize", password_confirmation: "actualize", bartender: true)
 
 # order = Order.create(customer_id: User.first.id, bartender_id: User.last.id, status: 0 )
+ # order = Order.create(customer_id: User.first.id, bartender_id: User.last.id, status: 0 )
 
-# drink = Drink.create(order_id: order.id, recipe_id: 1, status: 0)
-# drink = Drink.create(order_id: order.id, recipe_id: 3, status: 0)
+# drink = Drink.create(order_id: 2, recipe_id: 1, status: 0)
+# drink = Drink.create(order_id: 2, recipe_id: 3, status: 0)
 
 # recipe = Recipe.create(name: "Stella Artois", ingredients: "Belgian Pale Ale", price: 8, list: 1)
 # recipe = Recipe.create(name: "Blue Moon", ingredients: "Witbier", price: 7, list: 1)

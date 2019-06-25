@@ -22,7 +22,7 @@ class Api::DrinksController < ApplicationController
     # end
 
     @order = Order.find_or_create_by(
-                                      bartender_id: Bartender.first.id, #replace later
+                                      bartender_id: User.find_by(bartender: true).id, #replace later
                                       customer_id: current_user.id,
                                       status: "ordering"
                                       )

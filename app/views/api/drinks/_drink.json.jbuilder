@@ -5,6 +5,6 @@ json.rating drink.rating
 json.comment drink.comment
 json.status drink.status
 
-# json.recipepee do
-# json.recipeepee Recipe.where(id: drink.recipe_id)
-# end 
+json.name drink.recipe.name
+json.price drink.recipe.price
+
