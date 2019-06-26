@@ -1,12 +1,12 @@
 class Api::OrdersController < ApplicationController
-  # before_action :authenticate_user
+  before_action :authenticate_user
 
   def index 
-    # if current_user.bartender?
+    if current_user.bartender?
       @orders = Order.all
-    # else
-    #   @orders = current_user.submitted_orders
-    # end
+    else
+      @orders = current_user.submitted_orders
+    end
     render 'index.json.jbuilder'
   end
 
