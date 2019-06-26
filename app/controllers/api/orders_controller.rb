@@ -3,7 +3,7 @@ class Api::OrdersController < ApplicationController
 
   def index 
     if current_user.bartender?
-      @orders = Order.all
+      @orders = Order.where("status = 1 OR status = 2")
     else
       @orders = current_user.submitted_orders
     end
