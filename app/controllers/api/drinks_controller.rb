@@ -49,10 +49,10 @@ class Api::DrinksController < ApplicationController
     @drink = Drink.find(params[:id])
 
     @drink.order_id = params[:order_id] || @drink.order_id
-    @drink.recipe_id = params[:recipe_id] || drink.recipe_id
-    @drink.rating = params[:rating] || drink.rating
-    @drink.comment = params[:comment] || drink.comment
-    @drink.status = params[:status] || drink.status
+    @drink.recipe_id = params[:recipe_id] || @drink.recipe_id
+    @drink.rating = params[:rating] || @drink.rating
+    @drink.comment = params[:comment] || @drink.comment
+    @drink.status = params[:status] || @drink.status
 
     if @drink.save
       render 'show.json.jbuilder'
