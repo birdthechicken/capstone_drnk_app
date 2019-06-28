@@ -47,4 +47,14 @@ class Api::OrdersController < ApplicationController
     @order.destroy
     render json: {message: "Deleted"}
   end
+
+  def current_order
+    @order = current_user.submitted_orders.find_by(status: "ordering")
+
+    if @order 
+      render 'show.json.jbuilder'
+    else
+      render json: {}
+    end
+  end
 end

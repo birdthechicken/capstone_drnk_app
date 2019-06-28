@@ -7,6 +7,7 @@ Rails.application.routes.draw do
     delete '/drinks/:id' => 'drinks#destroy'
 
     get '/orders' => 'orders#index'
+    get '/orders/current' => 'orders#current_order'
     post '/orders' => 'orders#create'
     get 'orders/:id' => 'orders#show'
     patch 'orders/:id' => 'orders#update'

@@ -4,5 +4,5 @@ json.ingredients recipe.ingredients
 json.price recipe.price
 json.list recipe.list
 json.comment_messages recipe.comment_messages
-json.given_ratings recipe.given_ratings
+json.average_rating recipe.average_rating
 json.display false

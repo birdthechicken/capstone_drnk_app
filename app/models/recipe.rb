@@ -6,9 +6,9 @@ class Recipe < ApplicationRecord
     drinks.pluck(:comment).reject(&:blank?)
   end
 
-  def given_ratings
-    
-    drinks.average_ratings
+  def average_rating
+
+    drinks.average(:rating)
     # drinks.pluck(:rating).reject(&:blank?)
   end 
 end
