@@ -5,7 +5,7 @@ class Api::OrdersController < ApplicationController
     if current_user.bartender?
       @orders = Order.where("status = 1 OR status = 2")
     else
-      @orders = current_user.submitted_orders
+      @orders = current_user.submitted_orders.order(id: :desc)
     end
     render 'index.json.jbuilder'
   end
@@ -54,7 +54,7 @@ class Api::OrdersController < ApplicationController
     if @order 
       render 'show.json.jbuilder'
     else
-      render json: {}
+      render json: {drinks: []}
     end
   end
 end

@@ -4,5 +4,5 @@ class Order < ApplicationRecord
 
   has_many :drinks, dependent: :destroy
 
-  enum status: {ordering: 0, in_process: 1, mixing: 2, completed: 3 }
+  enum status: {ordering: 0, in_process: 1, mixing: 2, ready:3, completed: 4, picked_up: 5 }
 end
