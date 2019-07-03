@@ -36,7 +36,23 @@ class Api::OrdersController < ApplicationController
     @order.status = params[:status] || @order.status
 
     if @order.save
-      render 'show.json.jbuilder'
+      if @order.status == "in_process"
+        ActionCable.server.broadcast "alerts_channel", {
+          message: "Order submitted",
+          display: 'false'
+        }
+      elsif @order.status == "ready"
+        ActionCable.server.broadcast "alerts_channel", {
+          message: "Your DR!NK is ready for pick-up",
+          display: 'customer'
+        }
+      elsif @order.status == "completed"
+        ActionCable.server.broadcast "alerts_channel", {
+          message: "DR!NK has picked-up",
+          display: 'bartender'
+        }
+        render 'show.json.jbuilder'
+      end
     else
       render json: {message: @order.errors.full_messages}, status: :unprocessable_entity
     end
