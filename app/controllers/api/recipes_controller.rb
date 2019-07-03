@@ -13,7 +13,8 @@ class Api::RecipesController < ApplicationController
     @recipe = Recipe.new(
                         name: params[:name],
                         ingredients: params[:ingredients],
-                        price: params[:price]
+                        price: params[:price],
+                        image_url: params[:image_url]
                         )
 
     if @recipe.save
@@ -34,6 +35,7 @@ class Api::RecipesController < ApplicationController
     @recipe.name = params[:name] || @recipe.name
     @recipe.ingredients = params[:ingredients] || @recipe.ingredients
     @recipe.price = params[:price] || @recipe.price
+    @recipe.image_url = params[:image_url] || @recipe.image_url
 
     if @recipe.save
       render 'show.json.jbuilder'
