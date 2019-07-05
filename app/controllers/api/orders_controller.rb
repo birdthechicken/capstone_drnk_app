@@ -3,7 +3,7 @@ class Api::OrdersController < ApplicationController
 
   def index 
     if current_user.bartender?
-      @orders = Order.where("status = 1 OR status = 2")
+      @orders = Order.where("status = 1 OR status = 2 OR status = 4 OR status = 5")
     else
       @orders = current_user.submitted_orders.order(id: :desc)
     end
@@ -48,7 +48,7 @@ class Api::OrdersController < ApplicationController
         }
       elsif @order.status == "completed"
         ActionCable.server.broadcast "alerts_channel", {
-          message: "DR!NK has picked-up",
+          message: "DR!NK got picked-up",
           display: 'bartender'
         }
         render 'show.json.jbuilder'
