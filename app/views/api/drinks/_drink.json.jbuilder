@@ -7,5 +7,6 @@ json.status drink.order.status
 
 json.name drink.recipe.name
 json.price drink.recipe.price
+json.image_url drink.recipe.image_url
 
 

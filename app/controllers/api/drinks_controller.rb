@@ -3,6 +3,7 @@ class Api::DrinksController < ApplicationController
 
   def index
     @drinks = current_user.submitted_drinks
+    # .where("comment = '' OR comment = null OR rating = 0 OR rating = null")
     render 'index.json.jbuilder' 
   end 
 

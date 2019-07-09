@@ -8,7 +8,7 @@ class Recipe < ApplicationRecord
 
   def average_rating
 
-    drinks.average(:rating)
+    drinks.average(:rating).to_i
     # drinks.pluck(:rating).reject(&:blank?)
   end 
 end
